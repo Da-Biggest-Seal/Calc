@@ -160,12 +160,12 @@ public partial class MainWindow : Window
     {
         if (!zadanaOperace)
         {
-            number_1 += ".";
+            number_1 += ",";
         }
 
         else
         {
-            number_2 += ".";
+            number_2 += ",";
         }
         
         UpdateOutput();
@@ -184,5 +184,41 @@ public partial class MainWindow : Window
         }
 
         UpdateOutput();
+    }
+
+    private void Percent(object sender, RoutedEventArgs e)
+    {
+        //number 1 - number 2 % z number 1
+        //number 1 - (number 1 / 100) * number 2
+        
+        double output = 0;
+        
+        if (operace == "+")
+        {
+            output += double.Parse(number_1) + ((double.Parse(number_1) / 100) * double.Parse(number_2));
+        }
+        
+        if (operace == "-")
+        {
+            output += double.Parse(number_1) - ((double.Parse(number_1) / 100) * double.Parse(number_2));
+        }
+        
+        if (operace == "*")
+        {
+            output += double.Parse(number_1) * ((double.Parse(number_1) / 100) * double.Parse(number_2));
+        }
+        
+        if (operace == "/")
+        {
+            output += double.Parse(number_1) / ((double.Parse(number_1) / 100) * double.Parse(number_2));
+        }
+
+        OutputTextBox.Text = output.ToString();
+
+        
+        number_1 = output.ToString();
+        number_2 = "";
+        zadanaOperace = false;
+        
     }
 }

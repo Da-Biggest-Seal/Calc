@@ -24,7 +24,7 @@
         </Grid.ColumnDefinitions>
         
         <TextBox Name="OutputTextBox" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Margin="5" BorderThickness="1" TextAlignment="Right" IsReadOnly="True"/>
-        <Button Grid.Row="1" Grid.Column="0" Content="%" Margin="5"/>
+        <Button Grid.Row="1" Grid.Column="0" Content="%" Margin="5" Click="Percent"/>
         <Button Grid.Row="1" Grid.Column="1" Content="CE" Margin="5" Click="DeleteButtonClick"/>
         <Button Grid.Row="1" Grid.Column="2" Content="C" Margin="5" Click="DeleteButtonClick"/>
         <Button Grid.Row="1" Grid.Column="3" Content="Delete" Margin="5" Click="DeleteButtonClick"/>
